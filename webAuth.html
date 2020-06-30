@@ -2,7 +2,7 @@
 <body>
   <div id="log">shamiko</div>
   <script>
-    PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable().then(r => document.getElementById("log").innerHTML = r)
+    PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable().then(r => document.getElementById("log").innerHTML = "可用：" + r)
 
     // Enrollment
 
@@ -16,7 +16,8 @@
             },
             pubKeyCredParams: [ { type: "public-key", alg: -7 } ],
             challenge: new Uint8Array(26),
-            authenticatorSelection: { authenticatorAttachment: "platform" }
+            authenticatorSelection: { authenticatorAttachment: "platform" },
+            attestation: "direct"
         }
     };
 
