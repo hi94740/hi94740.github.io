@@ -1,6 +1,9 @@
 <head />
 <body>
+  <div id="log">shamiko</div>
   <script>
+    PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable().then(r => document.getElementById("log").innerHTML = r)
+
     // Enrollment
 
     const options = {
