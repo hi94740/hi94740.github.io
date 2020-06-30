@@ -1,0 +1,22 @@
+<head />
+<body>
+  <script>
+    // Enrollment
+
+    const options = {
+        publicKey: {
+            rp: { name: "github.io" },
+            user: {
+                name: "john.appleseed@example.com",
+                id: new Uint8Array(26),
+                displayName: "John Appleseed"
+            },
+            pubKeyCredParams: [ { type: "public-key", alg: -7 } ],
+            challenge: new Uint8Array(26),
+            authenticatorSelection: { authenticatorAttachment: "platform" }
+        }
+    };
+
+    navigator.credentials.create(options).then(console.log,console.error);
+  </script>
+</body>
